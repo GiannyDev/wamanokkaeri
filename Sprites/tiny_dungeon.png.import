@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dijk3g4unw67f"
-path="res://.godot/imported/tilemap.png-b9bc55d9a3c5afef7bfb764e7fa08183.ctex"
+uid="uid://njr81wbk04he"
+path="res://.godot/imported/tiny_dungeon.png-db1a82a42cdd1f94956a0192396a16ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tilemap.png"
-dest_files=["res://.godot/imported/tilemap.png-b9bc55d9a3c5afef7bfb764e7fa08183.ctex"]
+source_file="res://Sprites/tiny_dungeon.png"
+dest_files=["res://.godot/imported/tiny_dungeon.png-db1a82a42cdd1f94956a0192396a16ff.ctex"]
 
 [params]
 

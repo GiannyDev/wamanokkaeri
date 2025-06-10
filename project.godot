@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="El Ultimo Wamanokkaeri"
-run/main_scene="uid://cyo1qlr461xj1"
+run/main_scene="uid://dwp2bhpdagk63"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

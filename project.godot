@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="El Ultimo Wamanokkaeri"
-run/main_scene="uid://dwp2bhpdagk63"
+run/main_scene="uid://cyo1qlr461xj1"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,22 +20,29 @@ config/icon="res://icon.svg"
 EventBus="*res://Autoloads/event_bus.gd"
 Refs="*res://Autoloads/refs.gd"
 GameManager="*res://Autoloads/game_manager.gd"
+Springer="*res://Autoloads/Springer/springer.gd"
 
 [display]
 
 window/size/viewport_width=320
 window/size/viewport_height=180
-window/size/window_width_override=1280
-window/size/window_height_override=720
-window/stretch/mode="viewport"
-window/stretch/scale_mode="integer"
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
 
 [global_group]
 
 trees=""
+townhall=""
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_navigation/layer_1="floor"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="villager"
+2d_physics/layer_4="resource"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"

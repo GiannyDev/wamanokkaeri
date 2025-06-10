@@ -2,6 +2,7 @@ extends Node
 class_name FSM
 
 @export var init_state: FSMState
+@export var villager: Villager
 
 enum States {
 	IDLE,
@@ -13,13 +14,13 @@ enum States {
 }
 
 var current_state: FSMState
-var game_states: Dictionary = { }
+var game_states: Dictionary[States, Node] = { }
 
 func _ready() -> void:
 	EventBus.on_change_state.connect(_on_change_state)
-	for child: FSMState in get_children():
-		game_states[child.state] = child
-		child.fsm = self
+	for state: VillagerState in get_children():
+		game_states[state.state_type] = state
+		state.villager = villager
 
 
 func run_state() -> void:

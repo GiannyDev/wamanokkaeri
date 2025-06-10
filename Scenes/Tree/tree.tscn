@@ -1,25 +1,36 @@
 [gd_scene load_steps=5 format=3 uid="uid://csrqbv5j1lw8"]
 
 [ext_resource type="Texture2D" uid="uid://dcu0vuh4lc8lb" path="res://Sprites/tiny_town.png" id="1_oyxvi"]
-[ext_resource type="Shader" uid="uid://s82xd12wehxh" path="res://Resources/Shaders/flash.gdshader" id="1_rx2sp"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pb44w"]
-shader = ExtResource("1_rx2sp")
+[ext_resource type="Script" uid="uid://ow7bdsbelnvq" path="res://Scenes/Tree/tree.gd" id="1_rx2sp"]
+[ext_resource type="Texture2D" uid="uid://36wr0fpvuj5r" path="res://Sprites/Shadow.png" id="3_pb44w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rx2sp"]
 radius = 18.110771
 
 [node name="Tree" type="Node2D" groups=["trees"]]
+script = ExtResource("1_rx2sp")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_pb44w")
+z_index = 1
 position = Vector2(0, -15)
 texture = ExtResource("1_oyxvi")
 region_enabled = true
 region_rect = Rect2(64, 0, 15, 31)
 
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.43137255)
+texture = ExtResource("3_pb44w")
+
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1, -14)
 shape = SubResource("CircleShape2D_rx2sp")
+
+[node name="RegenTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]

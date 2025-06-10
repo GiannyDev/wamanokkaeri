@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://dpe2s2ib248nu"]
+[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://dpe2s2ib248nu"]
 
 [ext_resource type="Texture2D" uid="uid://dcu0vuh4lc8lb" path="res://Sprites/tiny_town.png" id="1_682ne"]
 
@@ -16,6 +16,14 @@ tile_data = PackedInt32Array(0, 524288, 7, 65536, 524288, 8)
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_rjjmy"]
 tile_data = PackedInt32Array(65536, 262144, 10, 131072, 262144, 10, 1, 196608, 8, 65537, 393216, 10, 131073, 393216, 10, 2, 262144, 8, 65538, 196608, 9, 131074, 196608, 10, 3, 262144, 8, 65539, 262144, 9, 131075, 262144, 10, 4, 262144, 8, 65540, 327680, 10, 131076, 393216, 10, 65541, 196608, 10, 131077, 196608, 10)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_682ne"]
+vertices = PackedVector2Array(8, -1.4375, 8, 1.796875, 1.71875, 1.578125, 1.6875, -1.3984375, 8, -1.6171875, 1.796875, 8, -0.8984375, 8, -0.8984375, 1.4921875, -0.8984375, -1.3125, -8, 1.2578125, -0.8984375, -8, 1.6171875, -8, -8, -1.078125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 0), PackedInt32Array(2, 5, 6, 7), PackedInt32Array(8, 3, 2, 7, 9), PackedInt32Array(8, 10, 11, 3), PackedInt32Array(8, 9, 12)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-0.8992939, -8, 1.6187286, -8, 1.7985878, 8, -0.8992939, 8), PackedVector2Array(-8, -1.0791512, 8, -1.6187286, 8, -1.4388695, 8, 1.7985878, -8, 1.2590122)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vmo05"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g87tv"]
 resource_name = "Pueblo"
@@ -64,6 +72,7 @@ texture = ExtResource("1_682ne")
 5:3/0 = 0
 6:3/0 = 0
 7:3/0 = 0
+7:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_vmo05")
 8:3/0 = 0
 9:3/0 = 0
 10:3/0 = 0
@@ -151,10 +160,12 @@ texture = ExtResource("1_682ne")
 8:10/0 = 0
 9:10/0 = 0
 10:10/0 = 0
+10:10/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_682ne")
 11:10/0 = 0
 
 [resource]
 physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_g87tv")
 pattern_0 = SubResource("TileMapPattern_682ne")
 pattern_1 = SubResource("TileMapPattern_vmo05")

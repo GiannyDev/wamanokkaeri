@@ -1,3 +1,4 @@
 extends Node
 
-signal on_change_state(from: FSM.States, to: FSM.States)
+signal on_chop_tree(tree: GameTree)
+signal on_chop_completed(tree: GameTree)

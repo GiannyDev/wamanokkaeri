@@ -1,13 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyo1qlr461xj1"]
+[gd_scene load_steps=7 format=3 uid="uid://cyo1qlr461xj1"]
 
 [ext_resource type="Script" uid="uid://cpuxawwdujowl" path="res://Scenes/Game/game.gd" id="1_mv0hc"]
-[ext_resource type="PackedScene" uid="uid://dwp2bhpdagk63" path="res://Scenes/pueblo/pueblo.tscn" id="3_qikps"]
+[ext_resource type="PackedScene" uid="uid://csrqbv5j1lw8" path="res://Scenes/Tree/tree.tscn" id="2_qikps"]
+[ext_resource type="PackedScene" uid="uid://11ledbvampsh" path="res://Scenes/Unit/Villager/villager.tscn" id="3_i1e5p"]
+[ext_resource type="PackedScene" uid="uid://dwp2bhpdagk63" path="res://Scenes/Pueblo/pueblo.tscn" id="3_qikps"]
 [ext_resource type="Script" uid="uid://cpvstxifgbi7l" path="res://Scenes/Game/villager_manager.gd" id="4_i1e5p"]
+[ext_resource type="PackedScene" uid="uid://bwprbcril5kbp" path="res://Scenes/Unit/Player/player.tscn" id="6_flgk0"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_mv0hc")
 
+[node name="Pueblo" parent="." instance=ExtResource("3_qikps")]
+
+[node name="Villager" parent="." instance=ExtResource("3_i1e5p")]
+position = Vector2(-493, -247)
+
+[node name="Tree" parent="." instance=ExtResource("2_qikps")]
+position = Vector2(-522, -264)
+
+[node name="Player" parent="." instance=ExtResource("6_flgk0")]
+position = Vector2(130, 61)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-452, -237)
+zoom = Vector2(0.94, 0.94)
+
 [node name="VillagerManager" type="Node" parent="."]
 script = ExtResource("4_i1e5p")
-
-[node name="Pueblo" parent="." instance=ExtResource("3_qikps")]

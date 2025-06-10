@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyo1qlr461xj1"]
+
+[ext_resource type="Script" uid="uid://cpuxawwdujowl" path="res://Scenes/Game/game.gd" id="1_mv0hc"]
+[ext_resource type="PackedScene" uid="uid://csrqbv5j1lw8" path="res://Scenes/Tree/tree.tscn" id="2_qikps"]
+[ext_resource type="PackedScene" uid="uid://11ledbvampsh" path="res://Scenes/Unit/Villager/villager.tscn" id="3_i1e5p"]
+[ext_resource type="Script" uid="uid://cpvstxifgbi7l" path="res://Scenes/Game/villager_manager.gd" id="4_i1e5p"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_mv0hc")
+
+[node name="Tree" parent="." instance=ExtResource("2_qikps")]
+position = Vector2(39, 72)
+
+[node name="Tree2" parent="." instance=ExtResource("2_qikps")]
+position = Vector2(38, 123)
+
+[node name="Tree3" parent="." instance=ExtResource("2_qikps")]
+position = Vector2(74, 161)
+
+[node name="Aldeano" parent="." instance=ExtResource("3_i1e5p")]
+position = Vector2(189, 74)
+
+[node name="VillagerManager" type="Node" parent="."]
+script = ExtResource("4_i1e5p")

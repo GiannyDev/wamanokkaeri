@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://csrqbv5j1lw8"]
+[gd_scene load_steps=5 format=3 uid="uid://csrqbv5j1lw8"]
 
 [ext_resource type="Texture2D" uid="uid://dcu0vuh4lc8lb" path="res://Sprites/tiny_town.png" id="1_oyxvi"]
+[ext_resource type="Shader" uid="uid://s82xd12wehxh" path="res://Resources/Shaders/flash.gdshader" id="1_rx2sp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pb44w"]
+shader = ExtResource("1_rx2sp")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rx2sp"]
 radius = 18.110771
@@ -8,6 +12,7 @@ radius = 18.110771
 [node name="Tree" type="Node2D" groups=["trees"]]
 
 [node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_pb44w")
 position = Vector2(0, -15)
 texture = ExtResource("1_oyxvi")
 region_enabled = true
